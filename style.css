@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial;
+  background: radial-gradient(circle at top left, #0b1220, #05070f);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* CENTER LAYOUT */
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* GLASS CARD */
+.card {
+  width: 380px;
+  padding: 24px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* TITLE */
+h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.sub {
+  opacity: 0.6;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 8px 0;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(0,0,0,0.25);
+  color: white;
+
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid rgba(59,130,246,0.6);
+}
+
+/* BUTTONS */
+button {
+  width: 100%;
+  padding: 12px;
+
+  border: none;
+  border-radius: 14px;
+
+  margin-top: 10px;
+
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+/* PRIMARY BUTTON (gradient like your image) */
+button {
+  background: linear-gradient(90deg, #3b82f6, #22c55e);
+  color: white;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* SECONDARY TABS */
+.tab-row {
+  display: flex;
+  background: rgba(0,0,0,0.35);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 15px;
+}
+
+.tab-row button {
+  flex: 1;
+  background: transparent;
+  margin: 0;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.tab-active {
+  background: rgba(255,255,255,0.08);
+}
+
+/* HIDE */
+.hidden {
+  display: none;
+}
+
+/* GRID DASHBOARD */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+/* SMALL CARDS */
+.small-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 16px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* TEXT MUTED */
+small, p {
+  opacity: 0.7;
+}
+
+/* OUTPUT BOX */
+#output, #logs, #friends {
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.85;
+}
