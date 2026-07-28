@@ -8,77 +8,69 @@
 
 <body>
 
-<!-- LOGIN -->
-<div id="loginView" class="view">
-  <div class="card center">
-    <h1>Faxy Secure Vault</h1>
-    <p class="sub">Secure Encryption & Identity System</p>
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="screen">
+  <h1>Faxy Secure Vault</h1>
 
-    <input id="userId" placeholder="User ID">
-    <input id="name" placeholder="Preferred Name">
+  <input id="userIdInput" placeholder="User ID">
+  <input id="nameInput" placeholder="Preferred Name">
 
-    <button onclick="signup()">Create Account</button>
-    <button onclick="login()">Login</button>
-  </div>
+  <button onclick="signup()">Sign Up</button>
+  <button onclick="login()">Log In</button>
 </div>
 
 <!-- DASHBOARD -->
-<div id="appView" class="view hidden">
+<div id="dashboard" class="screen hidden">
 
   <header>
-    <div>
-      <h2 id="welcome"></h2>
-      <small id="uid"></small>
-    </div>
-    <button class="logout" onclick="logout()">Logout</button>
+    <h2 id="welcomeText"></h2>
+    <button onclick="logout()">Logout</button>
   </header>
 
-  <div class="grid">
+  <!-- ENCRYPTION -->
+  <section class="card">
+    <h3>Encryption Tool</h3>
 
-    <!-- ENCRYPTION -->
-    <div class="card">
-      <h3>Encryption Tool</h3>
+    <textarea id="inputText" placeholder="Enter message..."></textarea>
 
-      <textarea id="input" placeholder="Enter message..."></textarea>
+    <select id="algorithm">
+      <option>AES</option>
+      <option>RSA</option>
+      <option>Kyber</option>
+    </select>
 
-      <select id="algo">
-        <option>AES</option>
-        <option>RSA</option>
-        <option>Kyber</option>
-      </select>
+    <button onclick="encrypt()">Encrypt</button>
 
-      <button onclick="encrypt()">Encrypt</button>
+    <p id="status">Idle</p>
+    <div id="output"></div>
+    <div id="key"></div>
+  </section>
 
-      <div id="status">Idle</div>
-      <div id="output"></div>
-      <div id="key"></div>
-    </div>
+  <!-- FRIENDS -->
+  <section class="card">
+    <h3>Friends</h3>
 
-    <!-- FRIENDS -->
-    <div class="card">
-      <h3>Friends</h3>
+    <input id="friendId" placeholder="Enter User ID">
+    <button onclick="addFriend()">Add Friend</button>
 
-      <input id="friendInput" placeholder="Enter User ID">
-      <button onclick="addFriend()">Add Friend</button>
+    <ul id="friendList"></ul>
+  </section>
 
-      <div id="friends"></div>
-    </div>
+  <!-- THEME -->
+  <section class="card">
+    <h3>Theme</h3>
 
-    <!-- THEMES -->
-    <div class="card">
-      <h3>Theme</h3>
-      <button onclick="setTheme('dark')">Dark</button>
-      <button onclick="setTheme('purple')">Purple</button>
-      <button onclick="setTheme('light')">Light</button>
-    </div>
+    <button onclick="setTheme('dark')">Dark</button>
+    <button onclick="setTheme('purple')">Purple</button>
+    <button onclick="setTheme('light')">Light</button>
+  </section>
 
-    <!-- LOGS -->
-    <div class="card">
-      <h3>Activity Log</h3>
-      <div id="logs"></div>
-    </div>
+  <!-- LOGS -->
+  <section class="card">
+    <h3>Activity Log</h3>
+    <div id="logs"></div>
+  </section>
 
-  </div>
 </div>
 
 <script src="app.js"></script>
